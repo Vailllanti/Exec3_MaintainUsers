@@ -11,7 +11,7 @@ namespace update
 	{
 		static void Main(string[] args)
 		{
-			string sql = @"UPDATE @Name,@Password FROM users WHERE id = @id";
+			string sql = @"UPDATE users SET Name=@Name,Password=@Password   WHERE id = @id";
 			var connection = new SqlDbHelper("default");
 
 			try

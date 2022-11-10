@@ -26,7 +26,7 @@ namespace select
 					string name = row.Field<string>("name");
 					DateTime dateOfBirth = row.Field<DateTime>("dateOfBirth");
 
-					Console.WriteLine($"ID = {id},Name = {name},Date of birth = {dateOfBirth}");
+					Console.WriteLine($"ID = {id},Name = {name},Date of Birth = {dateOfBirth}");
 				}
 
 			}
