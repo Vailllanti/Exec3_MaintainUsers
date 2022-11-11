@@ -11,14 +11,17 @@ namespace update
 	{
 		static void Main(string[] args)
 		{
-			string sql = @"UPDATE users SET Name=@Name,Password=@Password   WHERE id = @id";
+			string sql = @"UPDATE users SET Name=@Name,Account=@Account,Password=@Password,DateOfBirth=@DateOfBirth,Height=@Height WHERE id = @id";
 			var connection = new SqlDbHelper("default");
 
 			try
 			{
 				var parameters = new SqlParameterBulider()
 									.AddNVarchar("Name",50,"123")
+									.AddNVarchar("Account", 50, "123")
 									.AddNVarchar("Password",50,"4446")
+									.AddDatetime("DateOfBirth", new DateTime(1999, 11, 20))
+									.AddInt("Height", 199)
 									.AddInt("id",3)
 									.Build();
 				connection.ExecuteNonQuery(sql, parameters);
